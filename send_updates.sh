@@ -9,8 +9,6 @@ if [ -z "$mensagem" ]; then
 fi
 git commit -m "$mensagem"
 
-SENHA_SSH=$(cat /home/gustavo/.ssh/pass_ssh.txt)
-
 git push << EOF
 $SENHA_SSH
 EOF
