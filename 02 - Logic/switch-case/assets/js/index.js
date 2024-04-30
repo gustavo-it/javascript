@@ -73,7 +73,7 @@ const insertTextH1 = (day, month, date) => {
     const year = date.getFullYear();
     const hour = date.getHours();
     const minutes = date.getMinutes();
-    const text = `${day} to ${dayMonth} ${month} of ${year} ${hour}:${minutes}`;
+    const text = `${day}, ${dayMonth} to ${month} of ${year} ${hour}:${minutes}`;
 
     return h1.innerText = text;
 };
