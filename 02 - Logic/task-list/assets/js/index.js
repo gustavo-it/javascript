@@ -37,15 +37,14 @@ const saveTasks = () => {
     listTasks.push(taskText);
   }
 
-  const tasksJSON = JSON.stringify(listTasks); // transforma em JSON como string
-  // Só aceita strings -> setItem
-  localStorage.setItem("tasks", tasksJSON); // 1° vem o nome usado para recuperar, segundo vem o valor
+  const tasksJSON = JSON.stringify(listTasks)
+  localStorage.setItem("tasks", tasksJSON);
   console.log(tasksJSON);
 }
 
 const addTasksSaved = () => {
   const tasks = localStorage.getItem("tasks");
-  const listTasks = JSON.parse(tasks); // Convertendo de volta para um objeto js (nesse caso array)
+  const listTasks = JSON.parse(tasks);
   for (let task of listTasks) {
     createTask(task);
   }
