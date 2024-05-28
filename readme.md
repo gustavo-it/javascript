@@ -15,3 +15,7 @@ This section covers about advanced functions such as **factory functions, constr
 ---
 # Constructor Functions - Factory Functions
 These two folders have an **html calculator code**. But as the folders already say, a calculator is made with construction function and another with factory function.
+
+---
+# Section 04 - Arrays
+This section delves into arrays. Showing functions like reducer, filter and map, how to perform the combination of these 3 functions and show a little about the foreach as well.
