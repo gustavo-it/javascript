@@ -19,3 +19,7 @@ These two folders have an **html calculator code**. But as the folders already s
 ---
 # Section 04 - Arrays
 This section delves into arrays. Showing functions like reducer, filter and map, how to perform the combination of these 3 functions and show a little about the foreach as well.
+
+---
+# Section 05 - Objects and Prototypes
+this section talks about what prototypes are and explains why they are so important in javascript, shows how we create methods right in the prototype. In addition to some important fundamentals of classes, such as polymorphism.
