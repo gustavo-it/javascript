@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="eg">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body>
+
+    <section class="container">
+        <h1 id="title-principal">Registration Form</h1>
+        <ul>
+            <li>No field can be empty</li>
+            <li>User may only contain letters and/or numbers</li>
+            <li>User must have between 3 and 12 letters</li>
+            <li>Password must be between 6 and 12 characters</li>
+        </ul>
+
+        <form action="" class="form">
+
+            <label> Name </label>
+            <input type="text" class="name valid">
+
+            <label> Last name </label>
+            <input type="text" class="lastname valid">
+
+            <label> CPF </label>
+            <input type="text" class="cpf valid">
+
+            <label> Password </label>
+            <input type="password" class="password valid">
+
+            <label> Repeat Password </label>
+            <input type="password" class="repeat-password valid">
+
+            <button type="submit"> Submit </button>
+        </form>
+    </section>
+
+    <script src="assets/js/index.js"></script>
+</body>
+
+</html>
