@@ -1,11 +1,29 @@
-
-
 const request = object => {
-    const xhr = new XMLHttpRequest(); // faz a requisição de qualquer tipo de dado
-    xhr.open(object.method, object.url, true); // Primeiro você manda o método que deseja executar
-    // Em segundo você manda a URL da sua aplicação, em terceiro você indica com true (para assincrono) ou false (para assincrono)
+    return new Promise((resolve, reject) => {
+        const xhr = new XMLHttpRequest();
+        xhr.open(object.method, object.url, true);
+        xhr.send();
+        xhr.addEventListener("load", () => {
+            if(xhr.status >= 200 && xhr.status < 300) resolve(xhr.responseText);
+            else reject(xhr.statusText);
+        });
+    })
+}
 
-    xhr.send(); // Caso você envie os dados de algum formulário, você coloca as informações aqui. Como não é o nosso caso, pode deixar em branco
+document.addEventListener("click", el => {
+    const element = el.target;
+    const tag = element.tagName.toLowerCase();
 
-    xhr.addEventListener("load");
+    if (tag === "a") el.preventDefault(), loadPage(element);
+});
+
+async function loadPage (element) {
+    const href = element.getAttribute("href");
+    const response = await request({ method: "GET", url: href });
+    loadResult(response);
+}
+
+function loadResult(response) {
+    const result = document.querySelector(".resultado");
+    result.innerHTML = response;
 }
