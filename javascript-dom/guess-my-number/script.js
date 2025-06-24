@@ -17,6 +17,8 @@ buttonCheck.addEventListener("click", event => {
         setTextContent(message, "No number!");
     } else if (guess === secretNumber) { //
         setTextContent(message, "Correct number!");
+        document.querySelector("body").style.backgroundColor = "#60b347"; // sempre utilizar string
+        document.querySelector(".number").style.width = "30rem";
     } else if (guess > secretNumber) {
         if(score > 0) {
             setTextContent(message, "Too high!");
