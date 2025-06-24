@@ -1,7 +1,14 @@
-console.log(document.querySelector(".message").textContent);
-document.querySelector(".message").textContent = "Correct Number!";
-document.querySelector(".number").textContent = 13; // número aleatório gerado
-document.querySelector(".score") .textContent = 20; // score do usuário
+const buttonCheck = document.querySelector(".check");
+const inputGuess = document.querySelector(".guess");
+const message = document.querySelector(".message");
 
-document.querySelector(".guess").value = 23;
-console.log(document.querySelector(".guess").value) // selecionando o input onde o usuário digita as informações
+buttonCheck.addEventListener("click", event => {
+    const guess = Number(inputGuess.value);
+    console.log(guess);
+    console.log(typeof guess);
+    message.textContent = "Correct Number!";
+
+    if (!guess) {
+        message.textContent = "No number!";
+    }
+});
