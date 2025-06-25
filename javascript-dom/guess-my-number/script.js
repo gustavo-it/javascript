@@ -2,12 +2,24 @@ const buttonCheck = document.querySelector(".check");
 const inputGuess = document.querySelector(".guess");
 const message = document.querySelector(".message");
 const number = document.querySelector(".number");
+const again = document.querySelector(".again");
 let score = 20;
 
-const secretNumber = Math.trunc(Math.random() * 20) + 1;
+let secretNumber = Math.trunc(Math.random() * 20) + 1;
 number.textContent = secretNumber;
 
 const setTextContent = (element, message) => (element.textContent = message);
+
+again.addEventListener("click", event => {
+    secretNumber = Math.trunc(Math.random() * 20) + 1;
+    const divScore = document.querySelector(".score");
+    number.textContent = secretNumber;
+    setTextContent(message, "Start guessing...");
+    setTextContent(divScore, 20)
+    inputGuess.value = '';
+    document.querySelector("body").style.backgroundColor = "#222";
+    document.querySelector(".number").style.width = "15rem";
+});
 
 buttonCheck.addEventListener("click", (event) => {
   const guess = Number(inputGuess.value);
