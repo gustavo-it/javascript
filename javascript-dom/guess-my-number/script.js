@@ -3,6 +3,9 @@ const inputGuess = document.querySelector(".guess");
 const message = document.querySelector(".message");
 const number = document.querySelector(".number");
 const again = document.querySelector(".again");
+const spanHighscore = document.querySelector(".highscore");
+let gameWon = false;
+let highscore = [];
 let score = 20;
 
 let secretNumber = Math.trunc(Math.random() * 20) + 1;
@@ -17,12 +20,14 @@ again.addEventListener("click", event => {
     setTextContent(message, "Start guessing...");
     setTextContent(divScore, 20)
     inputGuess.value = '';
+    score = 20;
+    gameWon = false;
     document.querySelector("body").style.backgroundColor = "#222";
     document.querySelector(".number").style.width = "15rem";
 });
 
 buttonCheck.addEventListener("click", (event) => {
-  const guess = Number(inputGuess.value);
+  let guess = Number(inputGuess.value);
   const divScore = document.querySelector(".score");
 
   if (!guess) setTextContent(message, "No number!");
@@ -31,12 +36,20 @@ buttonCheck.addEventListener("click", (event) => {
     setTextContent(message, "Correct number!");
     document.querySelector("body").style.backgroundColor = "#60b347";
     document.querySelector(".number").style.width = "30rem";
-  } else {
+    highscore.push(score);
+    let max = Math.max.apply(null, highscore);
+    setTextContent(spanHighscore, max);
+    gameWon = true;
+  } 
+  if (gameWon) return;
+  else {
     if (score > 0) {
-      setTextContent(message, guess > secretNumber ? "Too high!" : "Too low!");
+      setTextContent(message, guess > secretNumber && guess !== secretNumber ? "Too high!" : "Too low!");
+      console.log(guess, secretNumber)
       score--;
       setTextContent(divScore, score);
-    } else {
+    }
+     else {
       setTextContent(message, "You lost the game!");
       setTextContent(divScore, 0);
     }
