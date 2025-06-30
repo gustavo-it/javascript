@@ -11,14 +11,31 @@ const btnHold = document.querySelector(".btn--hold");
 const secPlayer0 = document.querySelector(".player--0");
 const sectPlayer1 = document.querySelector(".player--1");
 
-const scores = [];
+let scores = [];
 let currentScore = 0;
 let activePlayer = 0;
 let playing = true;
 
-score0El.textContent = 0;
-score1El.textContent = 0;
-diceEl.classList.add("hidden");
+const init = () => {
+  currentScore = 0;
+  activePlayer = 0;
+  playing = true;
+
+  current0El.textContent = 0;
+  score0El.textContent = 0;
+  current1El.textContent = 0;
+  score1El.textContent = 0;
+
+  scores = [0, 0];
+
+  diceEl.classList.add("hidden");
+  secPlayer0.classList.remove("player--winner");
+  sectPlayer1.classList.remove("player--winner");
+  secPlayer0.classList.add("player--active");
+  sectPlayer1.classList.remove("player--active");
+};
+
+init();
 
 const switchPlayer = () => {
   activePlayer = activePlayer === 0 ? 1 : 0;
@@ -65,4 +82,8 @@ btnHold.addEventListener("click", (event) => {
       switchPlayer();
     }
   }
+});
+
+btnNew.addEventListener("click", event => {
+  init();
 });
