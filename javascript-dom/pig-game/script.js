@@ -84,6 +84,6 @@ btnHold.addEventListener("click", (event) => {
   }
 });
 
-btnNew.addEventListener("click", event => {
+btnNew.addEventListener("click", (event) => {
   init();
 });
