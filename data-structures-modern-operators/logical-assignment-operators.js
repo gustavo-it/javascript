@@ -1,16 +1,16 @@
 const rest1 = {
-    name: "Capri",
-    numGuests: 20,
+  name: "Capri",
+  numGuests: 20,
 };
 
 const rest2 = {
-    name: "La piazza",
-    owner: "Giovanna Rossi",
+  name: "La piazza",
+  owner: "Giovanna Rossi",
 };
 
 const rest3 = {
-    name: "Famiglia da Pizza",
-    owner: null,
+  name: "Famiglia da Pizza",
+  owner: null,
 };
 
 // Definindo um valor para caso uma variável ou chave, tenha um valor falsy.
