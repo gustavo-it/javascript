@@ -1,6 +1,6 @@
 // 1.
 
-const names = ["Maria", "Victoria", "Joana", "Rosa", "Ana"];
+const names = ["Maria", "Victoria", "Joana", "Rosa", "Ana", "Ana"];
 
 const [maria, victoria, ...all] = names;
 
@@ -46,8 +46,25 @@ const person = {
   city: "Belém",
 };
 
+// 8.
 const { completeName, age, city } = person;
 const getSummary = (object) => {
   const { completeName, age, city } = object;
   return `${completeName} tem ${age} anos e é de ${city}`;
+};
+
+// 9.
+const countName = (array) => {
+  const person = {};
+  for (const value of array) {
+    person[value] = (person[value] || 0) + 1;
+  }
+  return person;
+};
+
+// 10.
+const getMax = (array) => {
+  let max = 0;
+  for (number of array) max <= number ? (max = number) : max;
+  return max;
 };
